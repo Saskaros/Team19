@@ -1,0 +1,310 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <title>user profile</title>
+
+    <style>
+        
+.break{
+  padding-top: 5em;
+}
+.break2{
+  padding-top: 2em;
+}
+
+.center{
+  text-align: center;
+  float: center;
+
+}
+
+.max100{
+  max-width: 100%;
+}
+
+
+
+
+    </style>
+  </head>
+  <body>
+
+        <!-- Navigation Menu -->
+        <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top">
+          <div class="container">
+            <a class="navbar-brand" href="index.html">
+              <img src="logo3.png" alt="">
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+
+              <ul class="navbar-nav ml-auto text-primary">
+                <li class="nav-item">
+                  <a class="nav-link text-secondary" aria-current="page" href="#">Home</a>
+                </li>
+
+
+      
+                <li class="nav-item">
+                  <a class="nav-link text-secondary" href="#">Sign In/Register</a>
+                </li>
+
+
+                <li class="nav-item dropdown">
+                  <a class="nav-link text-secondary dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-expanded="false">
+                    Menu
+                  </a>
+                  <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                    <li><a class="dropdown-item" href="#">Search for Books</a></li>
+                    <li><a class="dropdown-item" href="#">Option 2</a></li>
+                    <li><a class="dropdown-item" href="#">Option 2</a></li>
+                    <li><a class="dropdown-item" href="#">Option 2</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+
+<div class="break">  </div> 
+<div class="container pt-4">
+  <div class="row justify-content-center">    <div class="col-md-9"><form class="d-flex">
+    <input class="form-control me-2" type="search" placeholder="Search for a book by title, author, or ISBN" aria-label="Search">
+    <button class="btn btn btn-outline-dark" type="submit">Search</button>
+  </form> </div></div>      
+  <div class="break2">  </div> 
+  <div class="row">
+    <div class="col-lg">
+      <div class="section-heading">
+     <div class="container"></div>
+          <div class="col-md-12"> </div>
+          <div class="card"> </div>
+          <div class="card-body"></div>
+          <div class="row"></div>
+          <div class="col-md-12"></div>
+      <h4>User profile</h4>
+  <div class="container"></div>
+          <div class="col-md-12"></div>
+      <div class="card">
+        <div class="card-body">
+          <div class="row">
+            <div class="col-md-12">
+              <hr />
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12">
+              <form>
+                <div class="form-group row">
+                  <label for="username" class="col-4 col-form-label"
+                    >Account ID*</label
+                  >
+                  <div class="col-8">
+                    <input
+                      id="accountid"
+                      name="accountid"
+                      placeholder="Account ID"
+                      class="form-control here"
+                      required="required"
+                      type="text"
+                    />
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <label for="name" class="col-4 col-form-label"
+                    >First Name</label
+                  >
+                  <div class="col-8">
+                    <input
+                      id="name"
+                      name="name"
+                      placeholder="First Name"
+                      class="form-control here"
+                      type="text"
+                    />
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <label for="lastname" class="col-4 col-form-label"
+                    >Last Name</label
+                  >
+                  <div class="col-8">
+                    <input
+                      id="lastname"
+                      name="lastname"
+                      placeholder="Last Name"
+                      class="form-control here"
+                      type="text"
+                    />
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <label for="text" class="col-4 col-form-label"
+                    >Display Name*</label
+                  >
+                  <div class="col-8">
+                    <input
+                      id="text"
+                      name="text"
+                      placeholder="Dispaly Name"
+                      class="form-control here"
+                      required="required"
+                      type="text"
+                    />
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <label for="text" class="col-4 col-form-label"
+                    >School Name*</label
+                  >
+                  <div class="col-8">
+                    <input
+                      id="text"
+                      name="text"
+                      placeholder="school Name"
+                      class="form-control here"
+                      required="required"
+                      type="text"
+                    />
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <label for="select" class="col-4 col-form-label"
+                    >Program</label
+                  >
+                  <div class="col-8">
+                    <select id="select" name="select" class="custom-select">
+                      <option value="none">None</option>
+                      <option value="computer system technology">Computer System Technology</option>
+                      <option value="software development">Software Development</option>
+                      <option value="engineering">Engineering</option>
+                      <option value="accounting, finance, and insurance">Accounting, Finance, and Insurance</option>
+                      <option value="business administration">Business Administration</option>
+                      <option value="human resource management">Human Resource Management</option>
+                      <option value="operations management">Operations Management</option>
+                      <option value="nursing">Nursing</option>
+                      <option value="marketing management">Marketing Management</option>
+                      <option value="interior design">Interior Design</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <label for="email" class="col-4 col-form-label">Email*</label>
+                  <div class="col-8">
+                    <input
+                      id="email"
+                      name="email"
+                      placeholder="Email"
+                      class="form-control here"
+                      required="required"
+                      type="text"
+                    />
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <label for="text" class="col-4 col-form-label"
+                    >Address</label
+                  >
+                  <div class="col-8">
+                    <input
+                      id="address"
+                      name="address"
+                      placeholder="Address"
+                      class="form-control here"
+                      type="text"
+                    />
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <label for="text" class="col-4 col-form-label"
+                    >Phone Number</label
+                  >
+                  <div class="col-8">
+                    <input
+                      oninput = "value=value.replace(/[^\d]/g,'')"
+                      id="telNo"
+                      name="telNo"
+                      placeholder="123-456-7890"
+                      minlength="9"
+                      maxlength="14"
+                      class="form-control here"
+                      type="tel"
+                    />
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <label for="publicinfo" class="col-4 col-form-label"
+                    >Public Info</label
+                  >
+                  <div class="col-8">
+                    <textarea
+                      id="publicinfo"
+                      name="publicinfo"
+                      placeholder="Briefly introduce yourself, ex: your favorite courses or your interests"
+                      cols="40"
+                      rows="4"
+                      class="form-control"
+                    ></textarea>
+                  </div>
+                </div>
+
+                <div class="form-group row">
+                  <div class="offset-4 col-8">
+                    <button name="reset" type="reset" class="btn btn-primary" style="background-color: red">
+                      Reset
+                    </button>
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <div class="offset-4 col-8">
+                    <button name="submit" type="submit" class="btn btn-primary">
+                      Update My Profile
+                    </button>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+<!-- footer -->
+<div class="row py-3">
+  <div class="col-md-7">
+  <ul class="nav">
+  <li class="nav-item">
+    <a class="nav-link text-info" href="about.html">Our Team</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link text-info" href="contact.html">Contact</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link text-info" href="help.html">Help</a>
+  </li>
+ 
+</ul>
+  </div>
+  <div class="col-md text-md-right">
+    <small>&copy; Website created by Team 19 for COMP 1800 Winter 2021</small>
+  </div>
+</div><!-- /footer -->      
+<!-- /Container-->
+<!-- JavaScript and dependencies -->
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js" integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/" crossorigin="anonymous"></script>
+        </div>
+      </div>
+          </div>
+</body>
+</html>
