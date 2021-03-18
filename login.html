@@ -9,13 +9,17 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
     <link rel="stylesheet" href="css/style.css">
+    <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.6.1/firebase-ui-auth.css" />
 
 
-    <title>Homepage</title>
+    <title>Log In</title>
 
     <style>
 
+
+
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,500&display=swap");
+html { overflow-y: scroll; }
 
 .break{
   padding-top: 70px;
@@ -104,6 +108,8 @@ padding-left:40px;
 }
 
     </style>
+
+    
   </head>
   <body>
 
@@ -152,58 +158,15 @@ padding-left:40px;
 
 <div class="break">  </div> 
 <div class="container pt-4">
-  <div class="break"></div>
-  <div class="row justify-content-center">       <div class="vid">Welcome to rebook.</div>
 
 
-  </div>
-  <div class="break2"></div> 
-  <div class="row justify-content-center">     <div class="col-md-8"> 
-    We can help you find secondhand textbooks at the <b>best value. </b>
-    </div></div>
-    <div class="break3"></div> 
-  <div class="row justify-content-center">     <div class="col-md-8">
-    <form class="d-flex">
-      <input class="form-control me-2" type="search" placeholder="Search by title, author, or ISBN" aria-label="Search">
-      <button class="btn-search" type="submit">Search</button>
-    </form>
-    </div></div> <div class="break"></div>    <div class="row justify-content-center"> <h2>What we offer:</h2></div>
-    <div class="row justify-content-center"><div class="col-md-8">
-      
+  <div id="firebaseui-auth-container"></div>
+  <div id="loader">Loading...</div>
+<div class="break"></div>
+
+</div>
 
 
-      <div class="row row-cols-1 row-cols-md-3 g-4">
-        <div class="col-md-4 col-sm-6 col-xs-12">
-          <div class="card">
-            <img src="images/icon9.jpg" class="card-img-top" alt="...">
-            <div class="card-body">
-              <h5 class="card-title">Buy</h5>
-              <p class="card-text">Browse a selection of used textbooks from other BCIT students. You can save hundreds of dollars by buying secondhand. </p>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4 col-sm-6 col-xs-12">
-          <div class="card">
-            <img src="images/icon8.jpg" class="card-img-top" alt="...">
-            <div class="card-body">
-              <h5 class="card-title">Sell</h5>
-              <p class="card-text">Want to earn some cash back for those old books you no longer use? Simply set up a profile and list your books with us! </p>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4 col-sm-6 col-xs-12">
-          <div class="card">
-            <img src="images/icon7.jpg" class="card-img-top" alt="...">
-            <div class="card-body">
-              <h5 class="card-title">Shop With Confidence</h5>
-              <p class="card-text">We publish seller ratings and buyer reviews to make sure you get the best experience on our site.</p>
-            </div>
-          </div>
-        </div>
-
-      </div>
-
-      </div></div>
 
 
   </div>
@@ -236,8 +199,69 @@ padding-left:40px;
   </div>
 </div><!-- /footer -->      
 </div> <!-- /Container-->
+
+
+
 <!-- JavaScript and dependencies -->
+
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js" integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/" crossorigin="anonymous"></script>
+
+<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="/__/firebase/8.3.1/firebase-app.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+
+<!-- Initialize Firebase -->
+<script src="/__/firebase/init.js"></script>
+
+<script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-firestore.js"></script>
+<script src="https://www.gstatic.com/firebasejs/ui/4.6.1/firebase-ui-auth.js"></script>
+
+<script src="scripts/firebase_api.js"></script>
+
+<script>
+// Initialize the FirebaseUI Widget using Firebase.
+    var ui = new firebaseui.auth.AuthUI(firebase.auth());
+
+    var uiConfig = {
+  callbacks: {
+    signInSuccessWithAuthResult: function(authResult, redirectUrl) {
+      // User successfully signed in.
+      // Return type determines whether we continue the redirect automatically
+      // or whether we leave that to developer to handle.
+      return true;
+    },
+    uiShown: function() {
+      // The widget is rendered.
+      // Hide the loader.
+      document.getElementById('loader').style.display = 'none';
+    }
+  },
+  // Will use popup for IDP Providers sign-in flow instead of the default, redirect.
+  signInFlow: 'popup',
+  signInSuccessUrl: 'home.html',
+  signInOptions: [
+    // Leave the lines as is for the providers you want to offer your users.
+    // firebase.auth.GoogleAuthProvider.PROVIDER_ID,
+    // firebase.auth.FacebookAuthProvider.PROVIDER_ID,
+    // firebase.auth.TwitterAuthProvider.PROVIDER_ID,
+    // firebase.auth.GithubAuthProvider.PROVIDER_ID,
+    firebase.auth.EmailAuthProvider.PROVIDER_ID,
+    // firebase.auth.PhoneAuthProvider.PROVIDER_ID
+  ],
+  // Terms of service url.
+  tosUrl: '<your-tos-url>',
+  // Privacy policy url.
+  privacyPolicyUrl: '<your-privacy-policy-url>'
+};
+
+// The start method will wait until the DOM is loaded.
+ui.start('#firebaseui-auth-container', uiConfig);
+    </script>
+
 </body>
 </html>
