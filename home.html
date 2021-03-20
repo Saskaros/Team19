@@ -1,145 +1,243 @@
-<!DOCTYPE html>
-<html>
-
-<head>
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
     <meta charset="utf-8">
-    <title>My BCIT Project</title>
-    <meta name="comp1800 boilerplate code" content="my bcit project">
-    <meta name="author" content="BCIT">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <!-- Bootstrap for Mobile-first, and JQuery -->
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="css/style.css">
 
 
-    <!-- Optional styles and scripts of your own -->
+    <title>Homepage</title>
 
+    <style>
 
-</head>
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,500&display=swap");
 
-<body>
+.break{
+  padding-top: 70px;
+}
 
-    <!-------------------------------------->
-    <!-- The following is HTML for layout -->
-    <!-------------------------------------->
-    <!-- Header Navigation Bar -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-info">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="#">New brand name</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
+.break2{
+  padding-top: 25px;
+}
+
+.break3{
+  padding-top: 15px;
+}
+
+.center{
+  text-align: center;
+  float: center;
+
+}
+
+.navbar-nav > form{
+  padding-left:0px;
+  padding-right:65px;
+}
+
+.container-fluid {
+  background: url("images/background-photo2.jpg");
+  background-size: cover;
+  background-position: center center;
+  background-attachment: fixed;
+}
+
+.h1 {
+font-weight: 800;
+  font-size: 40px;
+}
+
+.h2 {
+  text-align: center;
+}
+
+.btn-search {
+  min-width: 100px;
+  height: 40px;
+  padding: 0 15px;
+  background: #1a2d4e;
+  white-space: nowrap;
+  border-radius: 3px;
+  font-size: 16px;
+  color: #fff;
+  transition: all .2s ease-out, color .2s ease-out;
+  border: 0;
+  cursor: pointer;
+  margin-left: 2px;
+
+}
+
+.btn-search:hover{
+  background:#111e33;
+}
+
+.form-control {    
+background: url("images/search3.png");
+background-color: white;
+background-size: 35px 35px;
+background-position: top left;
+background-repeat: no-repeat;
+padding-left:40px;   
+}
+
+.card {
+  border: none;
+}
+
+.card img {
+  padding: 50px;
+}
+
+.card-body {
+  text-align: center;
+}
+
+.vid {
+  font-size: 40px;
+  font-weight: 700;
+  text-align: center;
+}
+
+    </style>
+  </head>
+  <body>
+
+        <!-- Navigation Menu -->
+        <nav class="navbar navbar-expand-lg bg-white navbar-light fixed-top">
+          <div class="container">
+            <a class="navbar-brand" href="index.html">
+              <img src="images/navbar-logo-45.png" alt="">
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Your items</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Profile</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
 
-    <div class="container">
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <div class="container-fluid">
-              
-                
-                <form class="d-flex">
-                  <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                  <button class="btn btn-outline-success" type="submit">Search</button>
-                </form>
-              
-            </div>
-          </nav>
+              <ul class="navbar-nav ml-auto text-primary">
+                <li class="nav-item">
+                  <a class="nav-link text-secondary" aria-current="page" href="#">Home</a>
+                </li>
 
-        
-    </div>
+                <li class="nav-item">
+                  <a class="nav-link text-secondary" href="#">Search</a>
+                </li>
+      
+                <li class="nav-item">
+                  <a class="nav-link text-secondary" href="#">Sign In/Register</a>
+                </li>
 
-    <div class="container">
-      
-        <div class="row align-items-center my-5">
-            <div class="col-lg-7">
-              <img class="img-fluid rounded mb-4 mb-lg-0" src="textbooks.jpg" alt="">
+
+               <!-- <li class="nav-item dropdown">
+                  <a class="nav-link text-secondary dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-expanded="false">
+                    My Account
+                  </a>
+                  <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                    <li><a class="dropdown-item" href="#">My Profile</a></li>
+                    <li><a class="dropdown-item" href="#">Post a Book</a></li>
+                    <li><a class="dropdown-item" href="#">Option 2</a></li>
+                    <li><a class="dropdown-item" href="#">Option 2</a></li>
+                  </ul>
+                </li>-->
+              </ul>
             </div>
-            <!-- /.col-lg-8 -->
-            <div class="col-lg-5">
-              <p>Trade your old text books with other students. Easy access to students. You no longer need to connect with community to look for potential customers.</p>
-              <a class="btn btn-primary" href="#">Get Started</a>
-            </div>
-            <!-- /.col-md-4 -->
           </div>
-      
-      
-      
-      
-      
-          <h1 class="display-4">Latest items</h1>
-        <div class="card-group">
-          <div class="card">
-              <img src="java1.jpg" class="card-img-top" alt="...">
-              <div class="card-body">
-                  <h5 class="card-title">Java 7th Edition</h5>
-                  <p class="card-text">Great opportunity to get text book with cheap price</p>
-                  <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-              </div>
-              <button type="button" class="btn btn-primary btn-sm">Trade</button>
-          </div>
-          <div class="card">
-              <img src="java2.jpg" class="card-img-top" alt="...">
-              <div class="card-body">
-                  <h5 class="card-title">Core Java</h5>
-                  <p class="card-text">I offer you better price than book store!!
-                  </p>
-                  <p class="card-text"><small class="text-muted">Last updated 31 mins ago</small></p>
-              </div>
-              <button type="button" class="btn btn-primary btn-sm">Trade</button>
-          </div>
-          <div class="card">
-              <img src="java3.jpg" class="card-img-top" alt="...">
-              <div class="card-body">
-                  <h5 class="card-title">Java A Beginner's Guide</h5>
-                  <p class="card-text">Last chance before it is gone!</p>
-                  <p class="card-text"><small class="text-muted">Last updated 1 mins ago</small></p>
-              </div>
-              <button type="button" class="btn btn-primary btn-sm">Trade</button>
-          </div>
-      </div>
+        </nav>
+        <div class="container-fluid">
+          <div class="break"></div>
+
+<div class="break">  </div> 
+<div class="container pt-4">
+  <div class="break"></div>
+  <div class="row justify-content-center">       <div class="vid">Welcome to rebook.</div>
+
+
   </div>
+  <div class="break2"></div> 
+  <div class="row justify-content-center">     <div class="col-md-8"> 
+    We can help you find secondhand textbooks at the <b>best value. </b>
+    </div></div>
+    <div class="break3"></div> 
+  <div class="row justify-content-center">     <div class="col-md-8">
+    <form class="d-flex">
+      <input class="form-control me-2" type="search" placeholder="Search by title, author, or ISBN" aria-label="Search">
+      <button class="btn-search" type="submit">Search</button>
+    </form>
+    </div></div> <div class="break"></div>    <div class="row justify-content-center"> <h2>What we offer:</h2></div>
+    <div class="row justify-content-center"><div class="col-md-8">
+      
 
 
-
-    <!----------------------------------------------->
-    <!-- JS: Boostrap, Firebase, API related    -->
-    <!----------------------------------------------->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous">
-    </script>
-
-    <!--------------------------------------------------------------------->
-    <!-- JS files: Your own JavaScript functions included here    -->
-    <!--------------------------------------------------------------------->
-
-
-    <footer class="bg-light text-center text-lg-start">
-        <!-- Copyright -->
-        <div class="text-center p-3" style="background-color: rgba(85, 81, 81, 0.5);">
-          © 2021 Copyright:
-          <a class="text-dark">Brandname.com</a>
+      <div class="row row-cols-1 row-cols-md-3 g-4">
+        <div class="col-md-4 col-sm-6 col-xs-12">
+          <div class="card">
+            <img src="images/icon9.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Buy</h5>
+              <p class="card-text">Browse a selection of used textbooks from other BCIT students. You can save hundreds of dollars by buying secondhand. </p>
+            </div>
+          </div>
         </div>
-        <!-- Copyright -->
-      </footer>
+        <div class="col-md-4 col-sm-6 col-xs-12">
+          <div class="card">
+            <img src="images/icon8.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Sell</h5>
+              <p class="card-text">Want to earn some cash back for those old books you no longer use? Simply set up a profile and list your books with us! </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 col-sm-6 col-xs-12">
+          <div class="card">
+            <img src="images/icon7.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Shop With Confidence</h5>
+              <p class="card-text">We publish seller ratings and buyer reviews to make sure you get the best experience on our site.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      </div></div>
 
 
+  </div>
+</div>                
 
 
+    <!-- /row -->
+
+
+<hr>
+<!-- footer -->
+<div class="container">
+<div class="row py-3">
+  <div class="col-md-7">
+  <ul class="nav">
+  <li class="nav-item">
+    <a class="nav-link text-info" href="about.html">Our Team</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link text-info" href="contact.html">Contact</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link text-info" href="help.html">Help</a>
+  </li>
+ 
+</ul>
+  </div>
+  <div class="col-md text-md-right">
+    <small>&copy; Website created by Team 19 for COMP 1800 Winter 2021</small>
+  </div>
+</div><!-- /footer -->      
+</div> <!-- /Container-->
+<!-- JavaScript and dependencies -->
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js" integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/" crossorigin="anonymous"></script>
 </body>
-
 </html>

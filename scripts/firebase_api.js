@@ -10,3 +10,4 @@
   };
   // Initialize Firebase
   firebase.initializeApp(firebaseConfig);
+  const db = firebase.firestore(); //add this to read and write
