@@ -47,6 +47,7 @@ text-decoration: none;
 display: inline-block;
 font-size: 14px;
 text-transform: uppercase;
+width: 200px;
 }
 .buttonwhite:hover {
 background-color:#f9f9f9; 
@@ -58,6 +59,7 @@ text-decoration: none;
 display: inline-block;
 font-size: 14px;
 text-transform: uppercase;
+
 }
 .card {
 background-color: #e4e4e4;
