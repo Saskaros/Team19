@@ -6,12 +6,11 @@
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <!-- Bootstrap CSS -->
       <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
-      <title>Home</title>
+      <title>Login</title>
       <!-- CSS -->
       <script src="https://kit.fontawesome.com/7fb5f730fc.js" crossorigin="anonymous"></script>
       <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.6.1/firebase-ui-auth.css" />
       <link rel="stylesheet" href="css/style.css">
-
    </head>
    <body>
       <!-- Navbar -->
@@ -58,68 +57,13 @@
       </div>
       <!-- End Navbar -->
       <!-- Main Content -->
-      <div class="container main">
-         <div class="row justify-content-center">
-            <div class="col-lg-8">
-               <div class="break"></div>
-               <div class="break"></div>
-               <h1>Welcome to rebook.</h1>
-               <p>We can help you find or sell secondhand textbooks at the <b>best value</b>.</p>
-               <div class="break3"></div>
-               <button class="buttonwhite">Browse For Books</button>
-               <p></p>
-               <div class="break3">
-               </div>
-               <img src="images/book2.jpg" alt="">
-               <div class="break2"></div>
-            </div>
+      <div class="container-fluid">
+         <div class="break"></div>
+         <div class="container pt-4">
+            <div id="firebaseui-auth-container"></div>
+            <div id="loader">Loading...</div>
+            <div class="break"></div>
          </div>
-         <!-- Cards -->
-         <div class="row justify-content-center">
-            <div class="col-sm-3">
-               <div class="label">
-                  <h1>Buy.</h1>
-                  <p>
-                  </p>
-                  Browse a selection of used textbooks from other BCIT students. You can save hundreds of dollars by buying secondhand. 
-                  <div class="break3"></div>
-                  <i class="fas fa-shopping-cart"></i>
-                  </p>
-               </div>
-            </div>
-         </div>
-         <div class="break2"></div>
-         <div class="row justify-content-center">
-            <div class="col-sm-3">
-               <div class="label">
-                  <h1>Sell.</h1>
-                  <p>
-                  </p>
-                  Want to earn some cash back for those old books you no longer use? Simply set up a profile and list your books with us! 
-                  <div class="break3"></div>
-                  <i class="fas fa-money-bill-wave"></i>
-                  </p>
-               </div>
-            </div>
-         </div>
-         <div class="break2"></div>
-         <div class="row justify-content-center">
-            <div class="col-sm-3">
-               <div class="label">
-                  <h1>Shop With Confidence.</h1>
-                  <p>
-                  </p>
-                  We publish seller ratings and buyer reviews to make sure you get the best experience on our site. 
-                  <div class="break3"></div>
-                  <i class="fas fa-star"></i>
-                  </p>
-               </div>
-            </div>
-         </div>
-         <div class="break2"></div>
-      </div>
-      </div>
-      <!-- End Cards -->
       </div>
       <!-- End Main Content -->
       <!-- Footer -->
@@ -155,5 +99,79 @@
          <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.6.0/dist/umd/popper.min.js" integrity="sha384-KsvD1yqQ1/1+IA7gi3P0tyJcT3vR+NdBTt13hSJ2lnve8agRGXTTyNaBYmCR/Nwi" crossorigin="anonymous"></script>
          <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.min.js" integrity="sha384-nsg8ua9HAw1y0W1btsyWgBklPnCUAFLuTMS2G72MMONqmOymq585AcH49TLBQObG" crossorigin="anonymous"></script>
          -->
+      <!-- The core Firebase JS SDK is always required and must be listed first -->
+      <script src="/__/firebase/8.3.1/firebase-app.js"></script>
+      <!-- TODO: Add SDKs for Firebase products that you want to use
+         https://firebase.google.com/docs/web/setup#available-libraries -->
+      <!-- Initialize Firebase -->
+      <script src="/__/firebase/init.js"></script>
+      <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-app.js"></script>
+      <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-auth.js"></script>
+      <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-firestore.js"></script>
+      <script src="https://www.gstatic.com/firebasejs/ui/4.6.1/firebase-ui-auth.js"></script>
+      <script src="scripts/firebase_api.js"></script>
+      <script>
+         // Initialize the FirebaseUI Widget using Firebase.
+             var ui = new firebaseui.auth.AuthUI(firebase.auth());
+         
+             var uiConfig = {
+           callbacks: {
+             signInSuccessWithAuthResult: function (authResult, redirectUrl) {
+                             // User successfully signed in.
+                             // Return type determines whether we continue the redirect automatically
+                             // or whether we leave that to developer to handle.
+                             //------------------------------------------------------------------------------------------
+                             // The code below is modified from default snippet provided by the FB documentation.
+                             //
+                             // If the user is a "brand new" user, then create a new "user" in your own database.
+                             // Assign this user with the name and email provided.
+                             // Before this works, you must enable "Firestore" from the firebase console.
+                             // The Firestore rules must allow the user to write. 
+                             //------------------------------------------------------------------------------------------
+                             var user = authResult.user;
+                             if (authResult.additionalUserInfo.isNewUser) {         //if new user
+                                 db.collection("users").doc(user.uid).set({         //write to firestore
+                                         name: user.displayName,                    //"users" collection
+                                         email: user.email                          //with authenticated user's ID (user.uid)
+                                     }).then(function () {
+                                         console.log("New user added to firestore");
+                                         window.location.assign("home.html");       //re-direct to main.html after signup
+                                     })
+                                     .catch(function (error) {
+                                         console.log("Error adding new user: " + error);
+                                     });
+                             } else {
+                                 return true;
+                             }
+                             return false;
+                         },
+             uiShown: function() {
+               // The widget is rendered.
+               // Hide the loader.
+               document.getElementById('loader').style.display = 'none';
+             }
+           },
+           // Will use popup for IDP Providers sign-in flow instead of the default, redirect.
+           signInFlow: 'popup',
+           signInSuccessUrl: 'home.html',
+           signInOptions: [
+             // Leave the lines as is for the providers you want to offer your users.
+             // firebase.auth.GoogleAuthProvider.PROVIDER_ID,
+             // firebase.auth.FacebookAuthProvider.PROVIDER_ID,
+             // firebase.auth.TwitterAuthProvider.PROVIDER_ID,
+             // firebase.auth.GithubAuthProvider.PROVIDER_ID,
+             firebase.auth.EmailAuthProvider.PROVIDER_ID,
+             // firebase.auth.PhoneAuthProvider.PROVIDER_ID
+           ],
+           // Terms of service url.
+           tosUrl: '<your-tos-url>',
+           // Privacy policy url.
+           privacyPolicyUrl: '<your-privacy-policy-url>'
+         };
+         
+         // The start method will wait until the DOM is loaded.
+         ui.start('#firebaseui-auth-container', uiConfig);
+             
+      </script>
    </body>
 </html>
