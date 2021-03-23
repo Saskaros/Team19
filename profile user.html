@@ -191,6 +191,7 @@
                           type="tel" />
                       </div>
                     </div>
+                    <!--
                     <div class="form-group row">
                       <label for="publicinfo" class="col-4 col-form-label">Public Info</label>
                       <div class="col-8">
@@ -199,6 +200,7 @@
                           cols="40" rows="4" class="form-control"></textarea>
                       </div>
                     </div>
+                    -->
 
                     <div class="form-group row">
                       <div class="offset-4 col-8">
@@ -279,7 +281,6 @@
                 document.getElementById("email").innerHTML = snap.data().Email;
                 document.getElementById("address").innerHTML = snap.data().Address;
                 document.getElementById("telNo").innerHTML = snap.data().PhoneNumber;
-                document.getElementById("publicinfo").innerHTML = snap.data().PublicInfo;
             })
         }
         readData();

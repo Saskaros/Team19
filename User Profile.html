@@ -191,6 +191,7 @@
                           type="tel" />
                       </div>
                     </div>
+                    <!--
                     <div class="form-group row">
                       <label for="publicinfo" class="col-4 col-form-label">Public Info</label>
                       <div class="col-8">
@@ -199,6 +200,7 @@
                           cols="40" rows="4" class="form-control"></textarea>
                       </div>
                     </div>
+                    -->
 
                     <div class="form-group row">
                       <div class="offset-4 col-8">
@@ -277,7 +279,6 @@
         var email = document.getElementById("email").value;
         var address = document.getElementById("address").value;
         var telNo = document.getElementById("telNo").value;
-        var publicinfo = document.getElementById("publicinfo").value;
 
         console.log(accountid);
         console.log(firstname);
@@ -287,7 +288,6 @@
         console.log(email);
         console.log(address);
         console.log(telNo);
-        console.log(publicinfo);
 
         db.collection("user profile").doc().set({
 
@@ -299,7 +299,6 @@
           "Email": email,
           "Address": address,
           "PhoneNumber": telNo,
-          "PublicInfo": publicinfo,
 
         })
 
