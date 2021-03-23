@@ -266,23 +266,48 @@
   var storage = firebase.storage(); //get a reference to the storage service, which is used to create reference in your storage
 </script>
 
-  <script>
-    function getBook() {
+<script>    
+function getBook() {
       document.getElementById("updatemyprofile").addEventListener('click', function () {
-        var location = document.getElementById("accountid").value;
-        var location = document.getElementById("firstname").value;
-        var location = document.getElementById("lastname").value;
-        var location = document.getElementById("displayname").value;
-        var location = document.getElementById("schoolname").value;
-        var location = document.getElementById("email").value;
-        var location = document.getElementById("address").value;
-        var location = document.getElementById("telNo").value;
-        var location = document.getElementById("publicinfo").value;
+        var accountid = document.getElementById("accountid").value;
+        var firstname = document.getElementById("firstname").value;
+        var lastname = document.getElementById("lastname").value;
+        var displayname = document.getElementById("displayname").value;
+        var schoolname = document.getElementById("schoolname").value;
+        var email = document.getElementById("email").value;
+        var address = document.getElementById("address").value;
+        var telNo = document.getElementById("telNo").value;
+        var publicinfo = document.getElementById("publicinfo").value;
 
-        console.log(location);
+        console.log(accountid);
+        console.log(firstname);
+        console.log(lastname);
+        console.log(displayname);
+        console.log(schoolname);
+        console.log(email);
+        console.log(address);
+        console.log(telNo);
+        console.log(publicinfo);
+
+        db.collection("user profile").doc().set({
+
+          "accountid": accountid,
+          "firstname": firstname,
+          "lastname": lastname,
+          "displayname": displayname,
+          "schoolname": schoolname,
+          "email": email,
+          "address": address,
+          "telNo": telNo,
+          "publicinfo": publicinfo,
+
       })
-    }
-  </script>
+
+    })
+
+  }
+  getBook();
+</script>
 
 </body>
 
