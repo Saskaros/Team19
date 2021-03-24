@@ -23,6 +23,19 @@
           .center {
 text-align: center;
           }
+
+          .form-label {
+             padding: none;
+             margin: none;
+          }
+
+          .comm {
+             width: 100%;
+             height: 100px;
+          }
+          input[type=text]:focus {
+  border: 3px solid #555;
+}
       </style>
    </head>
    <body>
@@ -80,13 +93,13 @@ text-align: center;
 
 
             <div class="label">
-                <div class="mb-3">
-                    <label for="exampleUserName1" class="form-label">Your username:</label>
-                </div>
 
-                <div class="mb-3">
-                    <label for="exampleSellerName1" class="form-label">Seller:</label>
-                </div>
+                    <label for="exampleUserName1" class="form-label">Your name: <span id="name-goes-here"></span></label>
+
+<br />
+
+                    <label for="exampleSellerName1" class="form-label">Seller: <span id="seller-goes-here"></span></label>
+
 
 <div class="row justify-content-center">
 
@@ -102,13 +115,14 @@ text-align: center;
 
         <div class="mb-3">
             <label for="exampleFormControlTextarea1" class="form-label">Comments:</label>
-            <textarea class="form-control" id="exampleFormControlTextarea1" rows="4"></textarea>
+            <textarea class="form-control" rows="4" id="comments"></textarea>
+            <!--<input type="text" class="comm" id="comments"> -->
           </div>
 
           <p>
           </p>
 
-          <button type="button" class="btn btn-dark">SUBMIT</button>
+          <button type="button" class="btn btn-dark" id="submit">SUBMIT</button>
 
 
 
@@ -161,5 +175,55 @@ text-align: center;
          <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.6.0/dist/umd/popper.min.js" integrity="sha384-KsvD1yqQ1/1+IA7gi3P0tyJcT3vR+NdBTt13hSJ2lnve8agRGXTTyNaBYmCR/Nwi" crossorigin="anonymous"></script>
          <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.min.js" integrity="sha384-nsg8ua9HAw1y0W1btsyWgBklPnCUAFLuTMS2G72MMONqmOymq585AcH49TLBQObG" crossorigin="anonymous"></script>
          -->
+               <!-- The core Firebase JS SDK is always required and must be listed first -->
+      <script src="/__/firebase/8.3.1/firebase-app.js"></script>
+      <!-- TODO: Add SDKs for Firebase products that you want to use
+         https://firebase.google.com/docs/web/setup#available-libraries -->
+      <!-- Initialize Firebase -->
+      <script src="/__/firebase/init.js"></script>
+      <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-app.js"></script>
+      <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-auth.js"></script>
+      <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-firestore.js"></script>
+      <script src="https://www.gstatic.com/firebasejs/ui/4.6.1/firebase-ui-auth.js"></script>
+      <script src="scripts/firebase_api.js"></script>
+      <script>
+
+
+function readName(){
+    db.collection("users").doc("test-user")
+    .onSnapshot(function(c){
+        console.log ("current document data: " + c.data());                       //.data() returns data object
+        document.getElementById("name-goes-here").innerHTML = c.data().displayName;    //using vanilla javascript
+    })
+}
+readName();
+
+function readSeller(){
+    db.collection("sellers").doc("test-seller")
+    .onSnapshot(function(c){
+        console.log ("current document data: " + c.data());                       //.data() returns data object
+        document.getElementById("seller-goes-here").innerHTML = c.data().displayName;    //using vanilla javascript
+    })
+}
+readSeller();
+
+
+function getReview() {
+            document.getElementById("submit").addEventListener('click', function () {
+               var com = document.getElementById("comments").value;
+               console.log(com);
+
+               db.collection("reviews").doc().set({
+                  "Comments": com,
+                  "User": "Leanne",
+                  "Seller": "Greg",
+               })
+            })
+         
+         }
+         getReview();
+
+
+        </script>
    </body>
 </html>
