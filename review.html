@@ -211,6 +211,7 @@ readSeller();
 function getReview() {
             document.getElementById("submit").addEventListener('click', function () {
                var com = document.getElementById("comments").value;
+               var nam = db.collection("users").doc("test-user").data()displayName;
                console.log(com);
 
                db.collection("reviews").doc().set({
