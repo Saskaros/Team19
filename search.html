@@ -6,10 +6,9 @@
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <!-- Bootstrap CSS -->
       <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
-      <title>Home</title>
+      <title>Search</title>
       <!-- CSS -->
       <script src="https://kit.fontawesome.com/7fb5f730fc.js" crossorigin="anonymous"></script>
-      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
       <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.6.1/firebase-ui-auth.css" />
       <link rel="stylesheet" href="css/style.css">
 
@@ -28,14 +27,14 @@
                      <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                            <li class="nav-item">
-                              <a class="nav-link active" aria-current="page" href="#">HOME</a>
+                              <a class="nav-link active" aria-current="page" href="index.html">HOME</a>
                            </li>
                            <li class="nav-item">
-                              <a class="nav-link" href="#">POST A BOOK</a>
+                              <a class="nav-link" href="login.html">LOGIN</a>
                            </li>
                            <li class="nav-item dropdown">
                               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                              MY ACCOUNT
+                              MENU
                               </a>
                               <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                                  <li><a class="dropdown-item" href="#">Action</a></li>
@@ -47,10 +46,7 @@
                               </ul>
                            </li>
                         </ul>
-                        <form class="d-flex">
-                           <input class="form-control me-2" type="search" placeholder="Search for Books" aria-label="Search">
-                           <button class="btn btn-dark" type="submit"><i class="fas fa-search"></i></button>
-                        </form>
+
                      </div>
                   </div>
                </nav>
@@ -64,18 +60,15 @@
             <div class="col-lg-8">
                <div class="break"></div>
                <div class="break"></div>
-               <h1>Welcome, <span id="name-goes-here"></span></h1>
-               <p>We're glad to see you back.</p>
+               <p>Search for books by title, author, or ISBN.</p>
 
-               <div class="break3"></div>
-               <a href="search.html"><button class="buttonwhite">Browse For Books</button></a>
+               <form class="d-flex">
+                <input class="form-control me-2" type="search" placeholder="Search for Books" aria-label="Search" id="city">
+                <button class="btn btn-dark" type="submit" id="submit"><i class="fas fa-search"></i></button>
+             </form>
                <p></p>
-               <a href="bookpost.html"><button class="buttonwhite">Post a Book for Sale</button></a>
-               <p></p>
-               <a href="User Profile.html"><button class="buttonwhite">Edit My Profile</button></a> 
-               <p></p><div class="break3"></div>
 
-
+               <div class="break2"></div>
             </div>
          </div>
 
@@ -109,7 +102,7 @@
       <div class="container">
       <footer class="navbar justify-content-evenly bg-white fixed-bottom">
          <div class="container py-3">
-            <a href = "javascript:history.back()"><i class="fas fa-chevron-left"></i></a> 
+            <a href = "home.html"><i class="fas fa-chevron-left"></i></a> 
              <i class="fas fa-home"></i>
              <i class="fas fa-search"></i>
              <i class="fas fa-user"></i>
@@ -136,31 +129,26 @@
       <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-firestore.js"></script>
       <script src="https://www.gstatic.com/firebasejs/ui/4.6.1/firebase-ui-auth.js"></script>
       <script src="scripts/firebase_api.js"></script>
-
-
+      <script>
 <script>
-function sayHello() {
-    firebase.auth().onAuthStateChanged(function (user) {
-        if (user) {
-            // User is signed in.
-            // Do something for the user here. 
-            console.log(user.uid);
-            db.collection("users").doc(user.uid)
-                .get()
-                .then(function (doc) {
-                    var n = doc.data().name;
-                    console.log(n);
-                    $("#name-goes-here").text(n);
-                    //document.getElementById("username").innerText = n;
+function getCity() {
+    document.getElementById("submit").addEventListener('click', function () {
+        var location = document.getElementById("city").value;
+        console.log(location);
+
+				//read cities collection from firestore, with query
+        db.collection("cities")
+            .where("name", "==", location)
+            .get()
+            .then(function (snap) {
+                snap.forEach(function(doc) {
+                    console.log(doc.data());
+                    //do something with the data
                 })
-        } else {
-            // No user is signed in.
-        }
-    });
+            })
+    })
 }
-sayHello();
+getCity();
 </script>
-
-
    </body>
 </html>
