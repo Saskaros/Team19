@@ -136,9 +136,9 @@
                             -->
 
 
-            <div class="col-md-7 custom-file">
-               <input type="file" class="custom-file-input" id="inputGroupFile01">
-
+            <div class="container text-center py-3">
+               <img id="txtpic-goes-here" src="images/blah.jpg" width=150 height=150 />
+               <input type="file" id="txtpic-input" accept="image/*" />
             </div>
 
 
@@ -209,8 +209,10 @@
       <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-auth.js"></script>
       <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-firestore.js"></script>
       <script src="https://www.gstatic.com/firebasejs/ui/4.6.1/firebase-ui-auth.js"></script>
+      <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-storage.js"></script>
       <script src="scripts/firebase_api.js"></script>
 
+     
 
       <script>
 
@@ -221,13 +223,16 @@
                var isb = document.getElementById("isbn").value;
                var pri = document.getElementById("price").value;
 
+
+
+
                console.log(ti);
                console.log(aut);
                console.log(isb);
                console.log(pri);
 
 
-               db.collection("textbooks").doc().set({
+               db.collection("textbooks").doc("BQB22IFCwappJadExEIL").set({
 
                   "Title": ti,
                   "Author": aut,
@@ -239,10 +244,49 @@
                //window.location.assign('postedbook.html')
 
             })
-            
+
 
          }
          getBook();
+
+         function showTxtPic() {
+            console.log('We are here');
+           var fileInput = document.getElementById("txtpic-input");   // pointer #1
+           const image = document.getElementById("txtpic-goes-here");   // pointer #2
+            fileInput.addEventListener('change', function (e) {        //event listener
+               console.log('Picked photo');
+               var file = e.target.files[0];
+               var blob = URL.createObjectURL(file);
+               image.src = blob;    //change DOM image
+
+              //store using this name
+               var storageRef = storage.ref("images/" + "BQB22IFCwappJadExEIL"+ ".jpg");
+
+               //upload the picked file
+               storageRef.put(file)
+                  .then(function () {
+                     console.log('Uploaded to Cloud Storage.');
+                  })
+
+               //get the URL of stored file
+               storageRef.getDownloadURL()
+                  .then(function (url) {   // Get URL of the uploaded file
+                     console.log(url);    // Save the URL into users collection
+                     db.collection("textbooks").doc("BQB22IFCwappJadExEIL").update({
+                        "Text Book Picture": url
+                     })
+                        .then(function () {
+                           console.log('Added Profile Pic URL to Firestore.');
+                        })
+
+            })
+         })
+         }
+         showTxtPic();
+
+         
+
+
       </script>
 
 
