@@ -115,25 +115,25 @@
 
 
 
-            <!-- 
-                              <div class="row row mb-3">
-                                <div class = "col-md-2">Condition
-                                  
-                                </div>
-                                <div class = "col-lg-7">
-                                  <select class="col-lg-7 custom-select d-block w-100" id="condition" required>
-                                    <option value="">Choose...</option>
-                                    <option>Excellent</option>
-                                    <option>Good</option>
-                                    <option>Mild</option>
-                                    <option>Poor</option>
-                                    <option>Bad</option>
-                                  </select>
-                                </div>
-                              </div>
 
-                              <div class="break"></div>
-                            -->
+            <div class="row row mb-3">
+               <div class="col-md-2">Condition
+
+               </div>
+               <div class="col-lg-7">
+                  <select class="col-lg-7 custom-select d-block w-100" id="condition" required>
+                     <option value="">Choose...</option>
+                     <option>Excellent</option>
+                     <option>Good</option>
+                     <option>Mild</option>
+                     <option>Poor</option>
+                     <option>Bad</option>
+                  </select>
+               </div>
+            </div>
+
+            <div class="break"></div>
+
 
 
             <div class="container text-center py-3">
@@ -189,15 +189,15 @@
       </div>
 
       <div class="container">
-      <footer class="navbar justify-content-evenly bg-white fixed-bottom">
-         <div class="container py-3">
-            <a href = "javascript:history.back()"><i class="fas fa-chevron-left"></i></a> 
-             <i class="fas fa-home"></i>
-             <i class="fas fa-search"></i>
-             <i class="fas fa-user"></i>
-         </div>
- </footer>
-</div>
+         <footer class="navbar justify-content-evenly bg-white fixed-bottom">
+            <div class="container py-3">
+               <a href="javascript:history.back()"><i class="fas fa-chevron-left"></i></a>
+               <i class="fas fa-home"></i>
+               <i class="fas fa-search"></i>
+               <i class="fas fa-user"></i>
+            </div>
+         </footer>
+      </div>
       <!-- End Footer -->
       <!-- Optional JavaScript; choose one of the two! -->
       <!-- Option 1: Bootstrap Bundle with Popper -->
@@ -223,7 +223,7 @@
       <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-storage.js"></script>
       <script src="scripts/firebase_api.js"></script>
 
-     
+
 
       <script>
 
@@ -262,16 +262,16 @@
 
          function showTxtPic() {
             console.log('We are here');
-           var fileInput = document.getElementById("txtpic-input");   // pointer #1
-           const image = document.getElementById("txtpic-goes-here");   // pointer #2
+            var fileInput = document.getElementById("txtpic-input");   // pointer #1
+            const image = document.getElementById("txtpic-goes-here");   // pointer #2
             fileInput.addEventListener('change', function (e) {        //event listener
                console.log('Picked photo');
                var file = e.target.files[0];
                var blob = URL.createObjectURL(file);
                image.src = blob;    //change DOM image
 
-              //store using this name
-               var storageRef = storage.ref("images/" + "BQB22IFCwappJadExEIL"+ ".jpg");
+               //store using this name
+               var storageRef = storage.ref("images/" + "BQB22IFCwappJadExEIL" + ".jpg");
 
                //upload the picked file
                storageRef.put(file)
@@ -290,12 +290,12 @@
                            console.log('Added Profile Pic URL to Firestore.');
                         })
 
+                  })
             })
-         })
          }
          showTxtPic();
 
-         
+
 
 
       </script>
