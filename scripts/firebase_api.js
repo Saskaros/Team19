@@ -10,5 +10,6 @@
   };
   // Initialize Firebase
   firebase.initializeApp(firebaseConfig);
+
   const db = firebase.firestore(); //add this to read and write
   var storage = firebase.storage(); //get a reference to the storage service, which is used to create reference in your storage
