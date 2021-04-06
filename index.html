@@ -1,159 +1,112 @@
 <!doctype html>
 <html lang="en">
-   <head>
-      <!-- Required meta tags -->
-      <meta charset="utf-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1">
-      <!-- Bootstrap CSS -->
-      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
-      <title>Home</title>
-      <!-- CSS -->
-      <script src="https://kit.fontawesome.com/7fb5f730fc.js" crossorigin="anonymous"></script>
-      <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.6.1/firebase-ui-auth.css" />
-      <link rel="stylesheet" href="css/style.css">
-
-   </head>
-   <body>
-      <!-- Navbar -->
-      <div class="container">
-         <div class="row justify-content-center">
-            <div class="col-lg-8">
-               <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-white">
-                  <div class="container-fluid">
-                     <a class="navbar-brand" href="#"><img src="images/rebook3.jpg" alt=""></a>
-                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                     <span class="navbar-toggler-icon"></span>
-                     </button>
-                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                           <li class="nav-item">
-                              <a class="nav-link active" aria-current="page" href="#">HOME</a>
-                           </li>
-                           <li class="nav-item">
-                              <a class="nav-link" href="#">LOGIN</a>
-                           </li>
-                           <li class="nav-item dropdown">
-                              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                              MENU
-                              </a>
-                              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                 <li><a class="dropdown-item" href="#">Action</a></li>
-                                 <li><a class="dropdown-item" href="#">Another action</a></li>
-                                 <li>
-                                    <hr class="dropdown-divider">
-                                 </li>
-                                 <li><a class="dropdown-item" href="#">Something else here</a></li>
-                              </ul>
-                           </li>
-                        </ul>
-                        <form class="d-flex">
-                           <input class="form-control me-2" type="search" placeholder="Search for Books" aria-label="Search">
-                           <button class="btn btn-dark" type="submit"><i class="fas fa-search"></i></button>
-                        </form>
-                     </div>
+<head>
+   <!-- Required meta tags -->
+   <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <!-- Bootstrap CSS -->
+   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
+      integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+   <title>Home</title>
+   <!-- CSS -->
+   <script src="https://kit.fontawesome.com/7fb5f730fc.js" crossorigin="anonymous"></script>
+   <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.6.1/firebase-ui-auth.css" />
+   <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+   <!-- Navbar -->
+   <div class="container">
+      <div class="row justify-content-center">
+         <div class="col-lg-8">
+            <nav class="navbar fixed-top justify-content-evenly navbar-expand-lg navbar-light bg-white">
+               <div class="container-fluid">
+                  <a href="javascript:history.back()"><i class="fas fa-chevron-left"></i></a>
+                  <a class="navbar-brand" href="index.html"><img src="images/new-logo.png" alt=""></a>
+                  <a href="#"><i class="fas fa-shopping-cart"></i></a>
+               </div>
+            </nav>
+         </div>
+      </div>
+   </div>
+   <!-- End Navbar -->
+   <!-- Main Content -->
+   <div class="container main">
+      <div class="row justify-content-center">
+         <div class="col-lg-8">
+            <div class="break"></div>
+            <div class="break2"></div>
+            <h1>Welcome to rebook.</h1>
+            <p>We can help you find or sell secondhand textbooks at the <b>best value</b>.</p>
+            <div class="break3"></div>
+            <!-- Carousel -->
+            <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+               <div class="carousel-indicators">
+                  <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
+                     aria-current="true" aria-label="Slide 1"></button>
+                  <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+                     aria-label="Slide 2"></button>
+                  <!-- <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button> -->
+               </div>
+               <div class="carousel-inner">
+                  <div class="carousel-item active">
+                     <img src="images/AdobeStock_352827895.jpg" class="d-block w-100" alt="...">
                   </div>
-               </nav>
+                  <div class="carousel-item">
+                     <img src="images/AdobeStock_352827963.jpg" class="d-block w-100" alt="...">
+                  </div>
+               </div>
+               <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+                  data-bs-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Previous</span>
+               </button>
+               <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+                  data-bs-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Next</span>
+               </button>
+            </div>
+            <!-- End Carousel -->
+            <div class="break3"></div>
+            <a href="search.html"><button class="buttonwhite">Search For Books</button></a>
+            <p></p>
+            <a href="login.html"><button class="buttonwhite">Log In / Sign Up</button></a>
+         </div>
+      </div>
+      <div class="break3"></div><br>
+      <div class="row justify-content-center">
+         <div class="col-lg-8">
+            <div class="banner">
+               <h1>Why use rebook?</h1>See why we're students #1 choice for textbooks.
             </div>
          </div>
       </div>
-      <!-- End Navbar -->
-      <!-- Main Content -->
-      <div class="container main">
-         <div class="row justify-content-center">
-            <div class="col-lg-8">
-               <div class="break"></div>
-               <div class="break"></div>
-               <h1>Welcome to rebook.</h1>
-               <p>We can help you find or sell secondhand textbooks at the <b>best value</b>.</p>
-               <div class="break3"></div>
-               <button class="buttonwhite">Browse For Books</button>
-               <p></p>
-               <div class="break3">
-               </div>
-               <img src="images/book2.jpg" alt="">
-               <div class="break2"></div>
-            </div>
+   </div>
+   </div>
+   <!-- End Main Content -->
+   <!-- Footer -->
+   <div class="break"></div>
+   <div class="break2"></div>
+   <div class="container">
+      <footer class="navbar justify-content-evenly bg-white fixed-bottom padded">
+         <div class="container py-3">
+            <a href="index.html"><i class="fas fa-home"></i></a>
+            <a href="search.html"><i class="fas fa-search"></i></a>
+            <a href="bookpost.html"><i class="fas fa-plus-circle"></i></a>
+            <a href="profile.html"><i class="fas fa-user"></i></a>
          </div>
-         <!-- Cards -->
-         <div class="row justify-content-center">
-            <div class="col-sm-3">
-               <div class="label">
-                  <h1>Buy.</h1>
-                  <p>
-                  </p>
-                  Browse a selection of used textbooks from other BCIT students. You can save hundreds of dollars by buying secondhand. 
-                  <div class="break3"></div>
-                  <i class="fas fa-shopping-cart"></i>
-                  </p>
-               </div>
-            </div>
-         </div>
-         <div class="break2"></div>
-         <div class="row justify-content-center">
-            <div class="col-sm-3">
-               <div class="label">
-                  <h1>Sell.</h1>
-                  <p>
-                  </p>
-                  Want to earn some cash back for those old books you no longer use? Simply set up a profile and list your books with us! 
-                  <div class="break3"></div>
-                  <i class="fas fa-money-bill-wave"></i>
-                  </p>
-               </div>
-            </div>
-         </div>
-         <div class="break2"></div>
-         <div class="row justify-content-center">
-            <div class="col-sm-3">
-               <div class="label">
-                  <h1>Shop With Confidence.</h1>
-                  <p>
-                  </p>
-                  We publish seller ratings and buyer reviews to make sure you get the best experience on our site. 
-                  <div class="break3"></div>
-                  <i class="fas fa-star"></i>
-                  </p>
-               </div>
-            </div>
-         </div>
-         <div class="break2"></div>
-      </div>
-      </div>
-      <!-- End Cards -->
-      </div>
-      <!-- End Main Content -->
-      <!-- Footer -->
-      <div class="container">
-         <div class="row justify-content-center">
-            <div class="col-lg-8">
-               <div class="d-flex justify-content-center">
-                  <ul class="nav">
-                     <li class="nav-item">
-                        <a class="nav-link text-info" href="about.html">Our Team</a>
-                     </li>
-                     <li class="nav-item">
-                        <a class="nav-link text-info" href="contact.html">Contact</a>
-                     </li>
-                     <li class="nav-item">
-                        <a class="nav-link text-info" href="help.html">Help</a>
-                     </li>
-                  </ul>
-               </div>
-               <div class="row justify-content-center">
-                  <p></p>
-                  <div class="footer">&copy; Website made by Team 19 for Comp 1800</div>
-               </div>
-            </div>
-         </div>
-      </div>
-      <!-- End Footer -->
-      <!-- Optional JavaScript; choose one of the two! -->
-      <!-- Option 1: Bootstrap Bundle with Popper -->
-      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
-      <!-- Option 2: Separate Popper and Bootstrap JS -->
-      <!--
+      </footer>
+   </div>
+   <!-- End Footer -->
+   <!-- Optional JavaScript; choose one of the two! -->
+   <!-- Option 1: Bootstrap Bundle with Popper -->
+   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
+      crossorigin="anonymous"></script>
+   <!-- Option 2: Separate Popper and Bootstrap JS -->
+   <!--
          <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.6.0/dist/umd/popper.min.js" integrity="sha384-KsvD1yqQ1/1+IA7gi3P0tyJcT3vR+NdBTt13hSJ2lnve8agRGXTTyNaBYmCR/Nwi" crossorigin="anonymous"></script>
          <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.min.js" integrity="sha384-nsg8ua9HAw1y0W1btsyWgBklPnCUAFLuTMS2G72MMONqmOymq585AcH49TLBQObG" crossorigin="anonymous"></script>
          -->
-   </body>
+</body>
 </html>
