@@ -11,10 +11,54 @@ font-weight: 400;
 .welcome {
   text-align: left;
 }
+.left {
+  text-align: left;
+}
+
+
+.firstFooter {
+  text-align: center;
+  color: #424242;
+}
+
+.firstFooter a{
+  color: #228be6;
+  text-decoration: none; 
+  font-size: 14px;
+}
+
+.firstFooter a:hover{
+  color: lightgrey;
+  text-decoration: none; 
+  font-size: 14px;
+}
+
+.sub {
+  font-size: 12px;
+}
+.left h3 {
+  position: relative;
+  color: black;
+  font-size: 20px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  padding-left: 37px;
+}
+
+.left h3:before {
+  width: 20px;
+  height: 2px;
+  content: '';
+  position: absolute;
+  left: 0;
+  top:12px;
+  background-color: black;
+  margin-left: 15px;
+}
 .navbar {
 padding-top: 10px;
 padding-bottom: 10px;
-border-bottom: 1px solid lightgrey;
+border-bottom: 2px solid lightgrey;
 }
 .navbar a{
   color: black;
@@ -228,38 +272,8 @@ font-weight: 400;
     max-width: 80%;
   }
 
-/* unvisited link */
-a:link {
-  color: black;
-}
-
-/* visited link */
-a:visited {
-  color: black;
-}
-
-/* mouse over link */
-a:hover {
-  color: black;
-}
-
-/* selected link */
-a:active {
-  color: black;
-}
-
-  a:link {
-    text-decoration: none;
+  .about{
+    background-color: white;
+    border: none;
   }
-  
-  a:visited {
-    text-decoration: none;
-  }
-  
-  a:hover {
-    text-decoration: none;
-  }
-  
-  a:active {
-    text-decoration: none;
-  }
+
