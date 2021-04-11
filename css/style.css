@@ -1,16 +1,29 @@
-@import url(//db.onlinewebfonts.com/c/d047865e0008f13cd1aa6146e29cb6bc?family=FV+Almelo);
+
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap');
+@import url("https://use.typekit.net/tbs6dka.css");
 html { overflow-y: scroll; }
 body {
 background-color: white; 
-font-family: 'Roboto Condensed';
+font-style: normal;
 font-weight: 400;
 }
+.welcome {
+  text-align: left;
+}
 .navbar {
-padding-top: 15px;
-padding-bottom: 15px;
+padding-top: 10px;
+padding-bottom: 10px;
 border-bottom: 1px solid lightgrey;
+}
+.navbar a{
+  color: black;
+}
+.navbar a:hover {
+  color: lightgrey;
+}
+.padded {
+  padding: 10px;
 }
 .btn-dark:hover{
 background-color: #52565a;
@@ -47,20 +60,44 @@ text-decoration: none;
 display: inline-block;
 font-size: 14px;
 text-transform: uppercase;
-width: 200px;
+width: 220px;
 }
 .buttonwhite:hover {
-background-color:#f9f9f9; 
-border: 2px solid #52565a;
-color: #52565a;
+background-color:white; 
+border: 2px solid grey;
+color: grey;
 padding: 12px 28px;
 text-align: center;
 text-decoration: none;
 display: inline-block;
 font-size: 14px;
 text-transform: uppercase;
-
 }
+.buttondark {
+  background-color:black; 
+  border: 2px solid black;
+  color: white;
+  padding: 12px 28px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+  font-weight: 500;
+  text-transform: uppercase;
+  width: 220px;
+  }
+  .buttondark:hover {
+  background-color:grey; 
+  border: 2px solid grey;
+  color: white;
+  padding: 12px 28px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+  font-weight: 500;
+  text-transform: uppercase;
+  }
 .card {
 background-color: #e4e4e4;
 }
@@ -74,3 +111,119 @@ text-align: center;
 text-decoration: none;
 display: inline-block;
 }
+.h1 {
+  font-family: futura-pt, sans-serif;
+  font-style: normal;
+font-weight: 400;
+}
+.banner {
+  padding: 30px;
+  background-color: #f2e9d1;
+}
+.profile {
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  background-color: #e4e0dd;
+}
+.profile label {
+  text-align: left;
+}
+#success {
+  color: #cc4b2e;
+}
+.posting {
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 25px;
+  padding-bottom: 25px;
+  background-color: #e4e0dd;
+}
+.posting label {
+  text-align: left;
+
+}
+
+#condition {
+  width: 100%;
+  border-radius: 3px;
+  border: 1px solid lightgrey;
+  color: grey;
+  padding: 8px;
+}
+
+#results {
+
+}
+
+#results img{
+  width: 100px;
+}
+
+.list-img {
+
+}
+
+.list-text {
+
+  text-align: left;
+}
+
+.booktitle {
+  text-transform: uppercase;
+  font-family: futura-pt, sans-serif;
+  font-style: normal;
+  font-weight: 300;
+}
+
+.bookauthor {
+  font-weight: bold;
+  
+}
+
+.bookprice {
+  color: #cc4b2e;
+  font-size: 1.2em;
+}
+
+.bookbutton {
+  background-color:black; 
+  border: 2px solid black;
+  color: white;
+  padding: 8px 18px;
+  margin: 5px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+.bookbutton:hover {
+  background-color:grey; 
+  border: 2px solid grey;
+  color: white;
+  padding: 8px 18px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+  font-weight: 500;
+  text-transform: uppercase;
+  }
+
+  .details {
+
+  }
+
+  .details-text {
+    padding-left: 10px;
+    padding-right: 10px;
+    text-align: left;
+  }
+
+  .details img{
+    max-width: 80%;
+  }
