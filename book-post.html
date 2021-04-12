@@ -166,6 +166,8 @@
                   var aut = document.getElementById("author").value;
                   var isb = document.getElementById("isbn").value;
                   var pri = document.getElementById("price").value;
+                  var today = new Date();
+                  var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
                   var conditionElement = document.getElementById("condition");
                   var condition = conditionElement.options[conditionElement.selectedIndex].text;
                   var fileInput = document.getElementById("txtpic-input");
@@ -190,6 +192,7 @@
                               "Price": pri,
                               "Condition": condition,
                               "ImageURL": downloadURL,
+                              "Date": date,
                               //"UserID": user.uid,
                               "UserName": name,
                               "UserEmail": email
