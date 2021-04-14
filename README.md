@@ -40,7 +40,9 @@ Content of the project folder:
 └── README.md                # readme file 
 
 It has the following subfolders and files:
-├── .git                     # Folder for git repo
+├── .firebase                # Folder for firebase hosting cache
+├── css                      # Folder for style sheets
+    /style.css               # css style sheet file 
 ├── images                   # Folder for images
     /avatar1.jpg             # first team avatar JPG file 
     /avatar2.jpg             # second team avatar JPG file 
@@ -52,7 +54,7 @@ It has the following subfolders and files:
     /cart.png                # icon for shopping cart PNG file 
     /new-logo.png            # brand logo PNG file 
     /user.png                # avatar for user profile PNG file 
-├── scripts                  # Folder for scripts
+└── scripts                  # Folder for scripts
     /book-search.js          # book search JS file
     /create-user.js          # create user on sign in JS file
     /firebase_api.js         # Firebase api JS file
@@ -62,11 +64,13 @@ It has the following subfolders and files:
     /search-redirect.js      # redirect after posting JS file
     /show-txt-pic.js         # preview uploaded image JS file
     /update-profile.js       # update user profile JS file
-├── styles                   # Folder for styles
-    /style.css               # css style sheet file 
 
 Firebase hosting files: 
-├── .firebaserc...
+├── .firebaserc             # project aliases file 
+├── firebase.json           # project configuration file
+├── firebase.indexes.json   # firestore indexes file
+├── firebase.rules          # firebase security rules file
+└── storage.rules           # storage rules file
 
 ```
 ## Contact 
