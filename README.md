@@ -68,7 +68,7 @@ It has the following subfolders and files:
 Firebase hosting files: 
 ├── .firebaserc...
 
-
+```
 ## Contact 
 * Leanne Holmes - lholmes24@my.bcit.ca 
 * Se Hwan Lee - slee994@my.bcit.ca 
