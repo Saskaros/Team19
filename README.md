@@ -29,8 +29,15 @@ Content of the project folder:
 ├── .gitignore               # Git ignore file
 ├── about.html               # project team HTML file 
 ├── book-post.html           # book posting page HTML file 
-├── index.html               # landing HTML file, this is what users see when you come to url
-└── README.md
+├── confirmation.html        # book post confirmation page HTML file
+├── details.html             # book listing details page HTML file 
+├── faq.html                 # frequently asked questions page HTML file 
+├── home.html                # home page after sign in HTML file 
+├── index.html               # landing page HTML file
+├── login.html               # login page HTML file 
+├── profile.html             # book listing details page HTML file 
+├── search.html              # book search form page HTML file
+└── README.md                # readme file 
 
 It has the following subfolders and files:
 ├── .git                     # Folder for git repo
@@ -46,15 +53,15 @@ It has the following subfolders and files:
     /new-logo.png            # brand logo PNG file 
     /user.png                # avatar for user profile PNG file 
 ├── scripts                  # Folder for scripts
-    /book-search.js          # Book search JS file
-    /create-user.js          # Create user JS file
+    /book-search.js          # book search JS file
+    /create-user.js          # create user on sign in JS file
     /firebase_api.js         # Firebase api JS file
-    /get-details.js          # Get detail JS file
-    /greeting-messgae.js     # Greeting message JS file
-    /post-book.js            # Post book JS file
-    /search-redirect.js      # Search redirect JS file
-    /show-txt-pic.js         # Show text picture JS file
-    /update-profile.js        # Update profile JS file
+    /get-details.js          # get book listing details JS file
+    /greeting-messgae.js     # greeting message JS file
+    /post-book.js            # post a book JS file
+    /search-redirect.js      # redirect after posting JS file
+    /show-txt-pic.js         # preview uploaded image JS file
+    /update-profile.js       # update user profile JS file
 ├── styles                   # Folder for styles
     /style.css               # css style sheet file 
 
@@ -62,16 +69,15 @@ Firebase hosting files:
 ├── .firebaserc...
 
 
-```
-
 ## Contact 
-Leanne Holmes - lholmes24@my.bcit.ca 
-Se Hwan Lee - slee994@my.bcit.ca 
-Chih-Hao Chen - cchen417@my.bcit.ca
+* Leanne Holmes - lholmes24@my.bcit.ca 
+* Se Hwan Lee - slee994@my.bcit.ca 
+* Chih-Hao Chen - cchen417@my.bcit.ca
 
 ## Acknowledgements 
 * <a href="https://fontawesome.com/">Font Awesome</a>
 * <a href="https://fonts.adobe.com/">Adobe Fonts</a> 
 * <a href="https://fonts.google.com/">Google Fonts</a>
 * <a href="https://stock.adobe.com/images">Adobe Stock Images</a>
+* <a href="https://getbootstrap.com/">Bootstrap</a>
 
