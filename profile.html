@@ -111,40 +111,9 @@
   <script src="https://www.gstatic.com/firebasejs/ui/4.6.1/firebase-ui-auth.js"></script>
   <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-storage.js"></script>
   <script src="scripts/firebase_api.js"></script>
-  <script>
-    function readData() {
-      firebase.auth().onAuthStateChanged(function (user) {
-        if (user) {
-          // User is signed in.
-          // Do something for the user here. 
-          db.collection("users").doc(user.uid)
-            .get()
-            .then(function (doc) {
-              const name = doc.data().name;
-              $("#name").val(name);
-              const email = doc.data().email;
-              $("#email").val(email);
-            })
-        } else {
-          // No user is signed in.
-        }
-      });
-    }
-    readData();
-    $("#profile").submit((event) => {
-      event.preventDefault();
-      firebase.auth().onAuthStateChanged(function (user) {
-        if (user) {
-          db.collection("users").doc(user.uid).update({
-            name: $("#name").val(),
-            email: $("#email").val()
-          }).then(() => {
-            $("#success").text("Profile details updated successfully!");
-          })
-        }
-      })
-    })
-  </script>
+  <!-- Page specific scripts -->
+  <script src="scripts/update-profile.js"></script>
+
 </body>
 
 </html>
