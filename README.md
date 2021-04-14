@@ -50,4 +50,5 @@ Firebase hosting files:
 ## Contact 
 
 ## Acknowledgements 
+* [Font Awesome](#https://fontawesome.com/)
 
