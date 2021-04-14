@@ -40,6 +40,7 @@
 						//upload the picked file into storage
 						storageRef.put(file)
 							.then(function (snapshot) {
+								console.log("Posting");
 								snapshot.ref.getDownloadURL().then(function (downloadURL) {
 									db.collection("textbooks").doc().set({
 										// Assign attributes to the textbook document
@@ -52,10 +53,14 @@
 										"Date": date,
 										"UserName": name,
 										"UserEmail": email
+									}).then(function (){
+										// Redirect after posting created
+										console.log("Posted");
+										window.location.href = "confirmation.html";
 									})
 								})
 							});
-					})
+					}) 	
 			}
 		})
 	})
