@@ -107,7 +107,7 @@
                 .get()
                 .then(function (doc) {   // display details!
                     $("#details-go-here").append(`<img src="${doc.data().ImageURL}">`);
-                    $("#details-go-here").append(`<div class="break3"></div><div class="details-text"><span class="booktitle">${doc.data().Title}</span><br>by <span class="bookauthor">${doc.data().Author}</span><br>Condition: ${doc.data().Condition}<br>ISBN: ${doc.data().ISBN}<br><span class="bookprice">$${doc.data().Price}</span><br><span class="sellername">Seller: ${doc.data().UserName}</span></div></div>
+                    $("#details-go-here").append(`<div class="break3"></div><div class="details-text"><span class="booktitle">${doc.data().Title}</span><br>by <span class="bookauthor">${doc.data().Author}</span><br>Condition: ${doc.data().Condition}<br>ISBN: ${doc.data().ISBN}<br><span class="sellername">Seller: ${doc.data().UserName}</span><br><span class="date">Date Listed: ${doc.data().Date}</span><br><span class="bookprice">$${doc.data().Price}</span></div></div>
                 <div class="break3"></div>
 
                 <p></p>
