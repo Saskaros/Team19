@@ -93,37 +93,10 @@
    <script src="https://www.gstatic.com/firebasejs/ui/4.6.1/firebase-ui-auth.js"></script>
    <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-storage.js"></script>
    <script src="scripts/firebase_api.js"></script>
-   <script>
-      function bookSearch() {
-         document.getElementById("submit").addEventListener('click', function (event) {
-            event.preventDefault();
-            var searchValue = document.getElementById("book").value;
-            console.log(searchValue);
+   <!-- Page specific scripts -->
+   <script src="scripts/book-search.js"></script>
+   <script src="scripts/search-redirect.js"></script>
 
-            //read textbooks collection from firestore, with query
-            db.collection("textbooks")
-               .where("Title", "==", searchValue)
-               .get()
-               .then(function (snap) {
-                  snap.forEach(function (doc) {
-                     console.log(doc.data());
-                     var id = doc.id;
-                     $("#results").append(`<div class="row"><div class="col list-img"><img src="${doc.data().ImageURL}"></div><div class="col-8 list-text"><span class="booktitle">${doc.data().Title}</span> <br> by <span class="bookauthor">${doc.data().Author} </span> <br><span class="bookprice">$${doc.data().Price}</span><br>Condition: ${doc.data().Condition} <br><button class="bookbutton" id = ${doc.id}>View Item</button></div></div><div class="break2"></div>`);
-                     addBookListener(id);
-                  })
-               })
-         })
-      }
-      bookSearch();
-
-      function addBookListener(id) {
-         document.getElementById(id)
-            .addEventListener("click", function () {
-               console.log(id + "was clicked!")
-               window.location.href = "details.html?id=" + id;
-            });
-      }
-   </script>
 </body>
 
 </html>

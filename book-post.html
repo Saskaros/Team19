@@ -140,88 +140,10 @@
    <script src="https://www.gstatic.com/firebasejs/ui/4.6.1/firebase-ui-auth.js"></script>
    <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-storage.js"></script>
    <script src="scripts/firebase_api.js"></script>
-   <script>
+   <!-- Page specific scripts -->
+   <script src="scripts/post-book.js"></script>
+   <script src="scripts/show-txt-pic.js"></script>
 
-      function postBook() {
-         document.getElementById("post").addEventListener('click', function () {
-            firebase.auth().onAuthStateChanged(function (user) {
-               if (user) {
-                  // User is signed in.
-                  // Do something for the user here. 
-                  console.log(user.uid);
-                  db.collection("users").doc(user.uid)
-                     .get()
-                     .then(function (doc) {
-                        var name = doc.data().name;
-                        var email = doc.data().email;
-                        var ti = document.getElementById("title").value;
-                        var aut = document.getElementById("author").value;
-                        var isb = document.getElementById("isbn").value;
-                        var pri = document.getElementById("price").value;
-                        var today = new Date();
-                        var date = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate();
-                        var conditionElement = document.getElementById("condition");
-                        var condition = conditionElement.options[conditionElement.selectedIndex].text;
-                        var fileInput = document.getElementById("txtpic-input");
-                        var file = fileInput.files[0];
-                        console.log(ti);
-                        console.log(aut);
-                        console.log(isb);
-                        console.log(pri);
-                        console.log(condition);
-                        console.log(file.name);
-                        //store using this name
-                        var storageRef = storage.ref("images/" + file.name);
-                        //upload the picked file
-                        storageRef.put(file)
-                           .then(function (snapshot) {
-                              console.log('Uploaded to Cloud Storage.');
-                              snapshot.ref.getDownloadURL().then(function (downloadURL) {
-                                 db.collection("textbooks").doc().set({
-                                    "Title": ti,
-                                    "Author": aut,
-                                    "ISBN": isb,
-                                    "Price": pri,
-                                    "Condition": condition,
-                                    "ImageURL": downloadURL,
-                                    "Date": date,
-                                    "UserName": name,
-                                    "UserEmail": email
-                                 })
-                              })
-                           });
-                     })
-               }
-
-            })
-         })
-      }
-      postBook();
-
-      function showTxtPic() {
-         var fileInput = document.getElementById("txtpic-input");   // pointer #1
-         const image = document.getElementById("txtpic-goes-here");   // pointer #2
-         fileInput.addEventListener('change', function (e) {        //event listener
-            console.log('Picked photo');
-            var file = e.target.files[0];
-            var blob = URL.createObjectURL(file);
-            image.src = blob;    //change DOM image
-         })
-      }
-      showTxtPic();
-
-      function previewListener() {
-         document.getElementById("Privew").addEventListener("click", function () {
-            console.log("Preivew was clicked!")
-            window.location.href = "preview.html?id=" + docId;
-         });
-      }
-
-
-
-
-
-   </script>
 </body>
 
 </html>
