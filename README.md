@@ -46,7 +46,15 @@ It has the following subfolders and files:
     /new-logo.png            # brand logo PNG file 
     /user.png                # avatar for user profile PNG file 
 ├── scripts                  # Folder for scripts
-    /book-search.js          # Book search JS file 
+    /book-search.js          # Book search JS file
+    /create-user.js          # Create user JS file
+    /firebase_api.js         # Firebase api JS file
+    /get-details.js          # Get detail JS file
+    /greeting-messgae.js     # Greeting message JS file
+    /post-book.js            # Post book JS file
+    /search-redirect.js      # Search redirect JS file
+    /show-txt-pic.js         # Show text picture JS file
+    /update-profile.js        # Update profile JS file
 ├── styles                   # Folder for styles
     /style.css               # css style sheet file 
 
