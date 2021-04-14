@@ -50,4 +50,8 @@ Firebase hosting files:
 ## Contact 
 
 ## Acknowledgements 
+* <a href="https://fontawesome.com/">Font Awesome</a>
+* <a href="https://fonts.adobe.com/">Adobe Fonts</a> 
+* <a href="https://fonts.google.com/">Google Fonts</a>
+* <a href="https://stock.adobe.com/images">Adobe Stock Images</a>
 
